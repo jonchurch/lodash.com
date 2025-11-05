@@ -9,18 +9,20 @@ The Lodash website.
 2. Ensure you are using the correct versions of both Ruby and Node:
     ```sh
     cd lodash.com
-    nvm install && nvm use # use the version specified in .nvmrc
 
-    # Install rbenv and Ruby 2.7.8
-    brew install rbenv
-    rbenv install 2.7.8
+    # Install Node 11 (required for legacy Gulp build system)
+    nvm install && nvm use # uses version from .nvmrc
 
-    # Initialize rbenv (auto-detects your shell)
-    eval "$(rbenv init -)"
+    # Install Ruby 3.4+ via Homebrew
+    brew install ruby
+
+    # Add to your PATH (if not already done)
+    echo 'export PATH="/opt/homebrew/opt/ruby/bin:$PATH"' >> ~/.zshrc
+    source ~/.zshrc
 
     # Verify versions
     node --version  # Should show v11.x.x
-    ruby --version  # Should show 2.7.8
+    ruby --version  # Should show 3.4.x
     ```
 
 3. Install required [gems](http://bundler.io/) & [packages](https://www.npmjs.com/) in the repository directory.
